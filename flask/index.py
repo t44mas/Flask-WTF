@@ -26,5 +26,12 @@ def training(prof):
 def list_prof(type_list):
     prof = ['врач', 'инженер', 'биолог', 'строитель']
     return render_template('list_prof.html', type=type_list, prof=prof)
+
+@app.route('/answer')
+@app.route('/auto_answer')
+def answer():
+    params = {}
+    params['name'] = 'Марк'
+    return render_template('auto_answer.html', **params)
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
