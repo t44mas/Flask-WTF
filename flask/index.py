@@ -40,5 +40,20 @@ def answer():
     params['motivation'] = 'Всегда мечтал застрять на Марсе!'
     params['ready'] = True
     return render_template('auto_answer.html', **params)
+@app.route('/distribution')
+def distribution():
+    astronauts = [
+        "Юрий Гагарин",
+        "Нил Армстронг",
+        "Базз Олдрин",
+        "Алексей Леонов",
+        "Салли Райд",
+        "Валентина Терешкова",
+        "Крис Хэдфилд",
+        "Пегги Уитсон",
+        "Сергей Крикалёв",
+        "Тим Пик",
+    ]
+    return render_template('distribution.html', list1=astronauts)
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
