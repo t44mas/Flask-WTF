@@ -31,7 +31,14 @@ def list_prof(type_list):
 @app.route('/auto_answer')
 def answer():
     params = {}
-    params['name'] = 'Марк'
+    params['title'] = 'Анкета'
+    params['name'] = 'Mark'
+    params['surname'] = 'Watny'
+    params['education'] = 'среднее'
+    params['profession'] = 'штурман марсохода'
+    params['sex'] = 'male'
+    params['motivation'] = 'Всегда мечтал застрять на Марсе!'
+    params['ready'] = True
     return render_template('auto_answer.html', **params)
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
