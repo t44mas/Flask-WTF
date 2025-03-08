@@ -2,3 +2,23 @@ h1.login{
 background: url('/static/MARS-2-7.png') no-repeat;
 padding-left: 150px;
 }
+td.color-box-blue-adult{
+width: 180px;
+height: 250px;
+background-color: blue;
+}
+td.color-box-blue-kid{
+width: 175px;
+height: 240px;
+background-color: rgba(0, 0, 255, 0.6);
+}
+td.color-box-orange-kid{
+width: 175px;
+height: 240px;
+background-color: rgba(255, 165, 0, 0.5);
+}
+td.color-box-orange-adult{
+width: 175px;
+height: 240px;
+background-color: rgba(255, 165, 0);
+}

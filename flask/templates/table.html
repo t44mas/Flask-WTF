@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <table border="1">
+
+      <tr>
+    <td>Цвет стен</td>
+    <td>Эмблема</td>
+  </tr>
+  <tr>
+    {% if gender == 'male' and age < 21 %}
+    <td class="color-box-blue-kid"></td>
+    <td><img src="/static/small_alien.png"></td>
+    {% elif gender == 'male' and age >= 21 %}
+    <td class="color-box-blue-adult"></td>
+    <td><img src="/static/big_alien.png"></td>
+    {% elif gender == 'female' and age < 21 %}
+    <td class="color-box-orange-kid"></td>
+    <td><img src="/static/small_alien.png"></td>
+    {% elif gender == 'female' and age >= 21 %}
+    <td class="color-box-orange-adult"></td>
+    <td><img src="/static/big_alien.png"></td>
+    {% endif %}
+
+  </tr>
+    </table>
+</div>
+
+{% endblock %}
