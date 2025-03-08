@@ -1,9 +1,14 @@
+import os
+from fileinput import filename
+
 from flask import Flask, render_template, redirect
 
 from forms.loginform import LoginForm
+from forms.galeryForm import galeryForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+app.config['UPLOAD_FOLDER'] = 'static'
 
 
 @app.route('/')
@@ -70,6 +75,18 @@ def table(gender, age):
     gender = gender
     age = int(age)
     return render_template('table.html', gender=gender, age=age)
+
+
+@app.route('/galery', methods=['GET', 'POST'])
+def galery():
+    form = galeryForm()
+    photo = 'MARS.jpg'
+    if form.validate_on_submit():
+        f = form.file.data
+        photo = f.filename
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], photo)
+        f.save(file_path)
+    return render_template('galery.html', form=form, photo=photo)
 
 
 if __name__ == '__main__':
